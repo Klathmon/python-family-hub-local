@@ -49,7 +49,7 @@ class FamilyHubCam(object):
         return output_image_bytes.getvalue()
 
     async def _get_cam_info (self):
-        async with async_timeout.timeout(5, loop=self._loop):
+        async with async_timeout.timeout(5):
             url = '{}{}'.format(self.host, '/glazeCameraInfo.txt')
             response = await self._session.get(url)
 
